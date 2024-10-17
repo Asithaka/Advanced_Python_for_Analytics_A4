@@ -7,10 +7,12 @@ Even numbers from the said list:
 Odd numbers from the said list:
 [1, 3, 5, 7, 9]
 '''
+originallist = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-
-
-
+Evennumbers  = list(filter(lambda num: (num % 2==0),originallist))
+print(Evennumbers)
+Oddnumbers = list(filter(lambda num: (num % 2==1),originallist))
+print(Oddnumbers)
 
 ''' 2)
 find which days of the week have exactly 6 characters.
@@ -18,11 +20,7 @@ find which days of the week have exactly 6 characters.
 
 weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
-
-
-
-
-
+print(list(filter(lambda day: (len(day)==6), weekdays)))
 
 
 
@@ -40,11 +38,9 @@ After removing the specified words from the said list:
 '''
 
 
+originallist = ['orange', 'red', 'green', 'blue', 'white', 'black']
 
-
-
-
-
+print(list(filter(lambda word: ( word != 'orange' and word != 'black'), originallist)))
 
 
 
@@ -58,9 +54,10 @@ Remove all elements from 'list1' present in 'list2:
 [1, 3, 5, 7, 9, 10]
  '''
 
+list1= [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+list2= [2, 4, 6, 8]
 
-
-
+print(list(filter(lambda num: ( int(num) not in list2), originallist)))
 
 
 ''' 5)
