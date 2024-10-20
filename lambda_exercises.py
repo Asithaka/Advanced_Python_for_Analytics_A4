@@ -57,7 +57,7 @@ Remove all elements from 'list1' present in 'list2:
 list1= [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 list2= [2, 4, 6, 8]
 
-print(list(filter(lambda num: ( int(num) not in list2), originallist)))
+print(list(filter(lambda num: ( num not in list2), list1)))
 
 
 ''' 5)
@@ -75,9 +75,11 @@ Elements of the said list that contain specific substring:
 
 '''
 
+originallist = ['red', 'black', 'white', 'green', 'orange']
 
+print(list(filter(lambda word: ( 'ack' in word ), originallist)))
 
-
+print(list(filter(lambda word: ( 'abc' in word ), originallist)))
 
 
 ''' 6)
@@ -89,16 +91,12 @@ str1 = "Hello8world"
 str1 = "HELLO"
 str1= "hello"
 
+newlist = ["Hello8world","HELLO","hello"]
 
-
-
-
-
-
-
-
-
-
+print(list(map(lambda word: any( item.isupper() for item  in word),newlist)))
+print(list(map(lambda word: any( item.islower() for item  in word),newlist)))
+print(list(map(lambda word: any( item.isdigit() for item in word),newlist)))
+print(list(map(lambda word: len(word) > 8 ,newlist)))
 
 ''' 7)
 Write a Python program to sort a list of tuples using Lambda.
@@ -109,3 +107,9 @@ original_scores = [('English', 88), ('Science', 90), ('Maths', 97), ('Social sci
 # Expected Result:
 # [('Social sciences', 82), ('English', 88), ('Science', 90), ('Maths', 97)]
 '''
+
+original_scores = [('English', 88), ('Science', 90), ('Maths', 97), ('Social sciences', 82)]
+
+print(original_scores.sort(key = lambda word: word[1]))
+print(original_scores) 
+
