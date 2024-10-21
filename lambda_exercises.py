@@ -93,10 +93,19 @@ str1= "hello"
 
 newlist = ["Hello8world","HELLO","hello"]
 
-print(list(map(lambda word: any( item.isupper() for item  in word),newlist)))
-print(list(map(lambda word: any( item.islower() for item  in word),newlist)))
-print(list(map(lambda word: any( item.isdigit() for item in word),newlist)))
-print(list(map(lambda word: len(word) > 8 ,newlist)))
+up_letter = list(map(lambda word: any( item.isupper() for item in word),newlist))
+low_letter = list(map(lambda word: any( item.islower() for item in word),newlist))
+num_value = list(map(lambda word: any( item.isdigit() for item in word),newlist))
+char_8 = list(map(lambda word: len(word) > 8 ,newlist))
+
+print(f"The string '{newlist[0]}' contains a capital letter: {up_letter[0]}, a lower case letter: {low_letter[0]}, a number:{num_value[0]} and a minimum length of 8 characters: {char_8[0]}")
+print(f"The string '{newlist[1]}' contains a capital letter: {up_letter[1]}, a lower case letter: {low_letter[1]}, a number:{num_value[1]} and a minimum length of 8 characters: {char_8[1]}")
+print(f"The string '{newlist[2]}' contains a capital letter: {up_letter[2]}, a lower case letter: {low_letter[2]}, a number:{num_value[2]} and a minimum length of 8 characters: {char_8[2]}")
+
+# print(list(map(lambda word: any( item.isupper() for item in word),newlist)))
+# print(list(map(lambda word: any( item.islower() for item in word),newlist)))
+# print(list(map(lambda word: any( item.isdigit() for item in word),newlist)))
+# print(list(map(lambda word: len(word) > 8 ,newlist)))
 
 ''' 7)
 Write a Python program to sort a list of tuples using Lambda.
